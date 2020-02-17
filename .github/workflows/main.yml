@@ -1,0 +1,14 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Action 7z
+      - uses: edgarrc/action-7zip@v1.0.4
+        with:
+          args: 7z a -t7z -mx=9 build.7z ./
