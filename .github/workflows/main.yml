@@ -14,11 +14,4 @@ jobs:
         with:
           name: my-artifact
           path: build.7z
-          
-          
-          
-          
-          
-          
-          
-          :  
+        
