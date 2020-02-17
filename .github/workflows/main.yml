@@ -9,3 +9,16 @@ jobs:
         with:
           pathSource: ./
           pathTarget: build.7z
+      - name: upload 7z
+        uses: actions/upload-artifact@v1
+        with:
+          name: my-artifact
+          path: build.7z
+          
+          
+          
+          
+          
+          
+          
+          :  
