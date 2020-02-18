@@ -7,10 +7,9 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: Action 7z
-        uses: DuckSoft/create-7z-action@v1.0
+        uses: edgarrc/action-7z@v1.0.4
         with:
-          pathSource: ./
-          pathTarget: build.7z
+          args: 7z a -t7z -mx9 build.7z ./
       - name: upload 7z
         uses: actions/upload-artifact@v1
         with:
