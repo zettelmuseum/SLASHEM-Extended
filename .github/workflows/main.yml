@@ -6,6 +6,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+      - name: remove .git
+        run: rm -rf ./.git  
       - name: Action 7z
         uses: edgarrc/action-7z@v1.0.4
         with:
