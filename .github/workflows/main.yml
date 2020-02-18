@@ -7,13 +7,20 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: remove .git
-        run: rm -rf ./.git  
+        run: rm -rf ./.git
+        run: find . -name '*.bmp' -delete
+        run: find . -name '*.png' -delete
+        run: find . -name '*.zip' -delete
       - name: Action 7z
         uses: edgarrc/action-7z@v1.0.4
         with:
-          args: 7z a -t7z -mx9 build.7z ./
-      - name: upload 7z
-        uses: actions/upload-artifact@v1
+          args: 7z a -t7z -mx9 build.7z 
+      - name: Upload the artifacts
+        uses: skx/github-action-publish-binaries@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: 'build*'
         with:
           name: my-artifact
           path: build.7z
